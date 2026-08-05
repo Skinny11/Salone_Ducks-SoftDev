@@ -130,7 +130,8 @@
 ## Summary
 
 **Total User Stories** = 14
-Must Have = 8
-Should Have = 4
-Could Have = 2 
-Won't Have = 0 
+
+**Must Have** = 8
+**Should Hav**e = 4
+**Could Have** = 2 
+**Won't Have** = 0 
