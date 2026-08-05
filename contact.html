@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salone Ducks — Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Salone Ducks Logo" class="logo-img">
+                <span class="logo-text">Salone Ducks</span>
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="application.html">Apply</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="nav-clock" id="liveClock">
+            <span id="clockDisplay">Loading time...</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<main class="main-wrapper">
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <h1>📞 Contact Us</h1>
+        <p>Have questions or need assistance? Reach out to our support team — we're here to help.</p>
+    </section>
+
+    <!-- ===== CONTACT LAYOUT ===== -->
+    <div class="contact-layout">
+
+        <!-- ===== LEFT COLUMN: CONTACT FORM ===== -->
+        <div class="contact-form-container">
+            <h2>Send Us a Message</h2>
+            <p>Fill in the form below and we'll get back to you within 24 hours.</p>
+
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="contactName" placeholder="e.g. Ishmael Koroma" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactEmail">Email Address <span class="required">*</span></label>
+                    <input type="email" id="contactEmail" placeholder="e.g. ishmael@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactPhone">Phone Number</label>
+                    <input type="tel" id="contactPhone" placeholder="e.g. +232 76 123 456">
+                </div>
+
+                <div class="form-group">
+                    <label for="contactSubject">Subject <span class="required">*</span></label>
+                    <select id="contactSubject" required>
+                        <option value="" disabled selected>-- Select a subject --</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Application Support">Application Support</option>
+                        <option value="Document Collection">Document Collection</option>
+                        <option value="Payment Issues">Payment Issues</option>
+                        <option value="Complaint">Complaint</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactMessage">Message <span class="required">*</span></label>
+                    <textarea id="contactMessage" rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit" id="contactSubmitBtn">Send Message →</button>
+            </form>
+
+            <div id="contactSuccess" style="display:none; margin-top:20px; padding:20px; background:#d1fae5; border-radius:8px; border-left:4px solid #0a7a0a;">
+                <h3 style="color:#0a5a2a; margin:0;">✅ Message Sent!</h3>
+                <p style="margin:10px 0 0 0; color:#0a4a2a;">Thank you for contacting Salone Ducks. Our team will respond to you within 24 hours.</p>
+                <button onclick="resetContactForm()" style="margin-top:15px; width:auto; padding:10px 30px; background:#0a7a0a;">Send Another Message</button>
+            </div>
+        </div>
+
+        <!-- ===== RIGHT COLUMN: CONTACT INFO ===== -->
+        <div class="contact-info-container">
+            <!-- Office Info -->
+            <div class="info-widget">
+                <h3>🏢 Office Address</h3>
+                <p><strong>Salone Ducks Headquarters</strong></p>
+                <p>7 Pultney Street,<br>Freetown, Sierra Leone</p>
+                <p><strong>Hours:</strong> Mon–Fri, 9:00 AM – 5:00 PM</p>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="info-widget">
+                <h3>📧 Get in Touch</h3>
+                <p><strong>Email:</strong> <a href="mailto:support@saloneducks.gov.sl">support@saloneducks.gov.sl</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+23276123456">+232 76 123 456</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/23276123456">+232 76 123 456</a></p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="info-widget">
+                <h3>🔗 Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="application.html">Apply for Documents</a></li>
+                    <li><a href="news.html">Latest News</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="index.html#services">Available Services</a></li>
+                </ul>
+            </div>
+
+            <!-- Service Centers -->
+            <div class="info-widget">
+                <h3>📍 Service Centers</h3>
+                <ul class="service-centers">
+                    <li>
+                        <strong>Freetown</strong>
+                        <span>7 Pultney Street</span>
+                        <span>📞 +232 76 123 456</span>
+                    </li>
+                    <li>
+                        <strong>Bo</strong>
+                        <span>13 Bo Road</span>
+                        <span>📞 +232 76 789 012</span>
+                    </li>
+                    <li>
+                        <strong>Kenema</strong>
+                        <span>25 Hangha Road</span>
+                        <span>📞 +232 76 345 678</span>
+                    </li>
+                    <li>
+                        <strong>Makeni</strong>
+                        <span>8 Bombali Road</span>
+                        <span>📞 +232 76 901 234</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ===== MAP SECTION ===== -->
+    <section class="map-section">
+        <h2 class="section-title">Find Us</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3946.1494053256097!2d-13.234067924175672!3d8.484850297267641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwMjknMDUuNCJOIDEzwrAxMyc1My40Ilc!5e0!3m2!1sen!2ssl!4v1784132407121!5m2!1sen!2ssl" 
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="Salone Ducks Location - 7 Pultney Street, Freetown, Sierra Leone">
+            </iframe>
+            <p class="map-note">📍 7 Pultney Street, Freetown, Sierra Leone</p>
+        </div>
+        
+        <!-- Get Directions Button -->
+        <div class="directions-btn-wrapper">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=8.484856088261509,-13.2315040613209" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="btn-directions">
+                <span class="text">Get Directions</span>
+                <span class="icon">🗺️</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== FAQ QUICK LINKS ===== -->
+    <section class="faq-contact-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-contact-grid">
+            <div class="faq-contact-item">
+                <h4>How do I track my application?</h4>
+                <p>Use your Application ID on the <a href="application.html#tracker">Apply page</a> to track, update, or delete your application.</p>
+            </div>
+            <div class="faq-contact-item">
+                <h4>What are the processing times?</h4>
+                <p>National ID: 7–14 days | Passport: 14–21 days | Driver's License: 7–14 days.</p>
+            </div>
+            <div class="faq-contact-item">
+                <h4>How do I pay for my documents?</h4>
+                <p>Pay at any Orange Money or Afrimoney agent using the payment reference generated with your Application ID.</p>
+            </div>
+            <div class="faq-contact-item">
+                <h4>Can I update my application after submission?</h4>
+                <p>Yes, within 5 days of submission. Use your Application ID on the <a href="application.html#tracker">Apply page</a>.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h3>Salone Ducks</h3>
+            <p>Your Gateway to National Documents &amp; Services</p>
+            <p style="color:#64748b; font-size:0.85rem; margin-top:5px;">7 PULTNEY STREET, FREETOWN</p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="application.html">Apply</a>
+            <a href="news.html">News</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-contact">
+            <p>📧 support@saloneducks.gov.sl</p>
+            <p>📞 +232 76 123 456</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Salone Ducks. Built for Sierra Leone.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
