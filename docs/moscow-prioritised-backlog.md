@@ -5,59 +5,53 @@
 | Priority | ID | User Story | MoSCoW |
 |----------|-----|------------|--------|
 | 1 | US-01 | Submit Document Application | **MUST HAVE** |
-| 2 | US-06 | View Real-Time Application Preview | **MUST HAVE** |
-| 3 | US-02 | Capture and Upload Photo | **MUST HAVE** |
-| 4 | US-07 | Age Validation for Driver's License | **MUST HAVE** |
-| 5 | US-14 | Receive Email Confirmation | **MUST HAVE** |
-| 6 | US-03 | Track Application Status | **MUST HAVE** |
-| 7 | US-04 | Update Application Within 5 Days | **MUST HAVE** |
-| 8 | US-05 | Delete Application Within 5 Days | **MUST HAVE** |
-| 9 | US-12 | Contact Support | **SHOULD HAVE** |
-| 10 | US-08 | Subscribe to News and Updates | **SHOULD HAVE** |
-| 11 | US-09 | Filter News by Category | **SHOULD HAVE** |
-| 12 | US-11 | View Service Center Information | **SHOULD HAVE** |
-| 13 | US-10 | Get Directions to Service Center | **COULD HAVE** |
-| 14 | US-13 | View Weather and Time | **COULD HAVE** |
+| 2 | US-02 | Capture and Upload Photo | **MUST HAVE** |
+| 3 | US-03 | Track Application Status | **MUST HAVE** |
+| 4 | US-04 | Update Application Within 5 Days | **MUST HAVE** |
+| 5 | US-05 | Delete Application Within 5 Days | **MUST HAVE** |
+| 6 | US-06 | View Real-Time Application Preview | **MUST HAVE** |
+| 7 | US-07 | Age Validation for Driver's License | **SHOULD HAVE** |
+| 8 | US-08 | Subscribe to News and Updates | **SHOULD HAVE** |
+| 9 | US-09 | Filter News by Category | **COULD HAVE** |
+| 10 | US-12 | Contact Support | **COULD HAVE** |
+
+---
 
 ## MoSCoW Summary
 
 | Category | Count | Percentage |
 |----------|-------|------------|
-| **MUST HAVE** | 8 | 57% |
-| **SHOULD HAVE** | 4 | 29% |
-| **COULD HAVE** | 2 | 14% |
+| **MUST HAVE** | 6 | 60% |
+| **SHOULD HAVE** | 2 | 20% |
+| **COULD HAVE** | 2 | 20% |
 | **WON'T HAVE** | 0 | 0% |
+| **TOTAL** | **10** | **100%** |
 
-## Must Have Justification
+---
 
-**US-01 (Submit Application):** The system is useless without the ability to submit applications. This is the core functionality.
+## Justification
 
-**US-06 (Live Preview):** Users need to verify details before submission to avoid errors and rejected applications.
+### Must Have (6)
+These stories form the core of the system. Without them, the application cannot function:
 
-**US-02 (Photo Capture/Upload):** Photos are a mandatory requirement for all document types. Without this, applications are incomplete.
+- **US-01:** The system is useless without the ability to submit applications
+- **US-02:** Photos are mandatory for all document types
+- **US-03:** Users need to know when their document is ready
+- **US-04:** Users make errors and need to correct them
+- **US-05:** Users may change their mind and need to cancel
+- **US-06:** Users need to verify details before submission
 
-**US-07 (Age Validation):** Driver's License applications from minors would be rejected automatically, wasting user time.
+### Should Have (2)
+Important features that enhance the user experience but are not critical:
 
-**US-14 (Email Confirmation):** Users need their Application ID and payment instructions to complete the process.
+- **US-07:** Prevents wasted time on invalid applications, but manual checks could work
+- **US-08:** Keeps users engaged but doesn't affect the core application flow
 
-**US-03 (Track Status):** Users need to know when their document is ready for collection.
+### Could Have (2)
+Nice-to-have features that add value but are not essential:
 
-**US-04 (Update Application):** Users may make errors; allowing updates within 5 days reduces frustration.
+- **US-09:** Enhances news browsing but users can still scroll through all news
+- **US-12:** Provides support but users could also use email or phone
 
-**US-05 (Delete Application):** Users may change their mind; allowing deletion within 5 days provides flexibility.
-
-## Should Have Justification
-
-**US-12 (Contact Support):** Important for user assistance but not required for the core application flow.
-
-**US-08 (Subscribe):** Good for engagement but not essential for document application.
-
-**US-09 (Filter News):** Enhances user experience but users can still browse all news.
-
-**US-11 (Service Center Info):** Useful for collection but can be communicated via email.
-
-## Could Have Justification
-
-**US-10 (Get Directions):** A convenience feature; users can search for directions themselves.
-
-**US-13 (Weather and Time):** A nice-to-have feature but not essential for the application process.
+### Won't Have (0)
+No stories are excluded in this release.
