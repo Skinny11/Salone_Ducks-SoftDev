@@ -13,7 +13,7 @@
 | 7 | US-07 | Age Validation for Driver's License | **SHOULD HAVE** |
 | 8 | US-08 | Subscribe to News and Updates | **SHOULD HAVE** |
 | 9 | US-09 | Filter News by Category | **COULD HAVE** |
-| 10 | US-12 | Contact Support | **COULD HAVE** |
+| 10 | US-10 | Contact Support | **COULD HAVE** |
 
 ---
 
@@ -51,7 +51,7 @@ Important features that enhance the user experience but are not critical:
 Nice-to-have features that add value but are not essential:
 
 - **US-09:** Enhances news browsing but users can still scroll through all news
-- **US-12:** Provides support but users could also use email or phone
+- **US-10:** Provides support but users could also use email or phone
 
 ### Won't Have (0)
 No stories are excluded in this release.
