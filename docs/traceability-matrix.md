@@ -11,7 +11,7 @@
 | US-07 | Age Validation for Driver's License | UC-07 | SHOULD HAVE | F-02 |
 | US-08 | Subscribe to News and Updates | UC-08 | SHOULD HAVE | P-05 |
 | US-09 | Filter News by Category | UC-09 | COULD HAVE | U-03 |
-| US-10 | Contact Support | UC-12 | COULD HAVE | S-01 |
+| US-10 | Contact Support | UC-10 | COULD HAVE | S-01 |
 
 ---
 
