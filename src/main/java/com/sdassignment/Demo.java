@@ -8,39 +8,21 @@ public class Demo {
         System.out.println("║          SALONE DUCKS - PRIORITISED BACKLOG             ║");
         System.out.println("╚══════════════════════════════════════════════════════════╝\n");
 
-        // Create user stories
+        // Create user stories (10 stories matching documentation)
         List<UserStory> backlog = new ArrayList<>();
 
-        // MUST HAVE Stories
+        // MUST HAVE Stories (6)
         backlog.add(new UserStory("US-01", "Submit Document Application",
             "citizen of Sierra Leone",
             "submit an application for a national document online",
             "obtain official identification without visiting a government office",
             MoscowPriority.MUST_HAVE, "UC-01"));
 
-        backlog.add(new UserStory("US-06", "View Real-Time Application Preview",
-            "citizen filling out an application",
-            "see a live preview of my document as I fill in the form",
-            "verify all details are correct before submitting",
-            MoscowPriority.MUST_HAVE, "UC-06"));
-
         backlog.add(new UserStory("US-02", "Capture and Upload Photo",
             "citizen applying for a document",
             "upload a photo from my device or capture one live using my camera",
             "provide a valid passport-sized photo",
             MoscowPriority.MUST_HAVE, "UC-02"));
-
-        backlog.add(new UserStory("US-07", "Age Validation for Driver's License",
-            "citizen applying for a Driver's License",
-            "be automatically informed if I am below the minimum age of 18",
-            "not waste time completing an application that will be rejected",
-            MoscowPriority.MUST_HAVE, "UC-07"));
-
-        backlog.add(new UserStory("US-14", "Receive Email Confirmation",
-            "citizen who has submitted an application",
-            "receive an email confirmation with my Application ID and payment details",
-            "have a record of my application and know how to pay",
-            MoscowPriority.MUST_HAVE, "UC-14"));
 
         backlog.add(new UserStory("US-03", "Track Application Status",
             "citizen who has submitted an application",
@@ -51,21 +33,27 @@ public class Demo {
         backlog.add(new UserStory("US-04", "Update Application Within 5 Days",
             "citizen who has submitted an application",
             "update my application details within 5 days of submission",
-            "correct errors or provide additional information before processing",
+            "correct errors before processing begins",
             MoscowPriority.MUST_HAVE, "UC-04"));
 
         backlog.add(new UserStory("US-05", "Delete Application Within 5 Days",
             "citizen who has submitted an application",
             "delete my application within 5 days of submission",
-            "cancel the application if I no longer need the document",
+            "cancel if I no longer need the document",
             MoscowPriority.MUST_HAVE, "UC-05"));
 
-        // SHOULD HAVE Stories
-        backlog.add(new UserStory("US-12", "Contact Support",
-            "citizen experiencing issues",
-            "send a message to the support team",
-            "get help with my application or report problems",
-            MoscowPriority.SHOULD_HAVE, "UC-12"));
+        backlog.add(new UserStory("US-06", "View Real-Time Application Preview",
+            "citizen filling out an application",
+            "see a live preview of my document as I fill in the form",
+            "verify all details are correct before submitting",
+            MoscowPriority.MUST_HAVE, "UC-06"));
+
+        // SHOULD HAVE Stories (2)
+        backlog.add(new UserStory("US-07", "Age Validation for Driver's License",
+            "citizen applying for a Driver's License",
+            "be informed if I am below the minimum age of 18",
+            "not waste time on an application that will be rejected",
+            MoscowPriority.SHOULD_HAVE, "UC-07"));
 
         backlog.add(new UserStory("US-08", "Subscribe to News and Updates",
             "citizen",
@@ -73,30 +61,18 @@ public class Demo {
             "stay informed about government services and opportunities",
             MoscowPriority.SHOULD_HAVE, "UC-08"));
 
+        // COULD HAVE Stories (2)
         backlog.add(new UserStory("US-09", "Filter News by Category",
             "citizen browsing the news section",
             "filter news articles by category",
             "quickly find information relevant to my interests",
-            MoscowPriority.SHOULD_HAVE, "UC-09"));
+            MoscowPriority.COULD_HAVE, "UC-09"));
 
-        backlog.add(new UserStory("US-11", "View Service Center Information",
-            "citizen",
-            "view contact details and addresses of all service centers",
-            "know where to go for document collection or inquiries",
-            MoscowPriority.SHOULD_HAVE, "UC-11"));
-
-        // COULD HAVE Stories
-        backlog.add(new UserStory("US-10", "Get Directions to Service Center",
-            "citizen who needs to collect a document",
-            "get directions to the nearest service center",
-            "easily find the location and plan my visit",
+        backlog.add(new UserStory("US-10", "Contact Support",
+            "citizen experiencing issues",
+            "send a message to the support team",
+            "get help with my application or report problems",
             MoscowPriority.COULD_HAVE, "UC-10"));
-
-        backlog.add(new UserStory("US-13", "View Weather and Time",
-            "citizen visiting the Salone Ducks website",
-            "view the current time and weather information",
-            "plan my visit to a service center accordingly",
-            MoscowPriority.COULD_HAVE, "UC-13"));
 
         // Sort by priority (Must Have first, then Should Have, then Could Have)
         Comparator<UserStory> priorityOrder = Comparator
@@ -143,12 +119,12 @@ public class Demo {
         System.out.printf("│  WON'T HAVE  : %-2d  (%.0f%%)                                       │\n", wontHave, (wontHave * 100.0 / backlog.size()));
         System.out.println("╚══════════════════════════════════════════════════════════╝\n");
 
-        // Acceptance Checks
+        // ===== ACCEPTANCE CHECKS WITH REAL DATA =====
         System.out.println("╔══════════════════════════════════════════════════════════╗");
         System.out.println("║                   ACCEPTANCE CHECKS                      ║");
         System.out.println("╚══════════════════════════════════════════════════════════╝\n");
 
-        // Create acceptance rules
+        // Create acceptance rules (10 rules matching the 10 stories)
         List<AcceptanceRule> rules = new ArrayList<>();
 
         rules.add(new AcceptanceRule(
@@ -215,51 +191,136 @@ public class Demo {
         ));
 
         rules.add(new AcceptanceRule(
-            "US-10: Open Directions in Google Maps",
-            "I am on the contact page",
-            "I click the 'Get Directions' button",
-            "Google Maps opens in a new tab with the address"
-        ));
-
-        rules.add(new AcceptanceRule(
-            "US-11: View All Service Centers",
-            "I am on the contact page",
-            "I view the service centers list",
-            "I see all service centers with addresses and phone numbers"
-        ));
-
-        rules.add(new AcceptanceRule(
-            "US-12: Send Message Successfully",
+            "US-10: Send Message Successfully",
             "I am on the contact page",
             "I fill in all required fields and click 'Send Message'",
             "I see a success message and the form clears"
         ));
 
-        rules.add(new AcceptanceRule(
-            "US-13: Current Time Displayed",
-            "I am on the Salone Ducks website",
-            "I view the top navigation bar",
-            "I see the current date and time updating every second"
-        ));
-
-        rules.add(new AcceptanceRule(
-            "US-14: Email Contains Application ID",
-            "I have submitted an application",
-            "I receive the confirmation email",
-            "The email contains my Application ID"
-        ));
-
-        // Run acceptance checks
+        // ===== RUN ACCEPTANCE CHECKS WITH REAL TEST DATA =====
         int passed = 0;
         int total = rules.size();
 
-        for (AcceptanceRule rule : rules) {
-            boolean result = rule.check();
-            System.out.println(rule);
-            System.out.println();
-            if (result) passed++;
-        }
+        // Test data for each rule
+        // US-01: Valid submission data
+        Object[] submissionData = {"Koroma", "Ishmael", "1990-05-15", "ishmael@example.com"};
+        // US-02: Photo data
+        Object[] photoData = {"data:image/png;base64,abc123...", true};
+        // US-03: Application ID tracking
+        List<Map<String, Object>> mockApps = new ArrayList<>();
+        Map<String, Object> mockApp = new HashMap<>();
+        mockApp.put("applicationId", "SLD-2026-001");
+        mockApps.add(mockApp);
+        Object[] trackingData = {"SLD-2026-001", mockApps};
+        // US-04 & US-05: Date data (today is within 5 days)
+        String today = java.time.LocalDate.now().toString();
+        String fiveDaysAgo = java.time.LocalDate.now().minusDays(3).toString();
+        Object[] dateData = {fiveDaysAgo, today, 5};
+        // US-06: Preview data
+        Object[] previewData = {true, "National ID"};
+        // US-07: Age data (25 years old - passes)
+        Object[] ageData = {"2000-01-01", 18};
+        // US-08: Subscription data
+        List<String> subscribers = new ArrayList<>();
+        subscribers.add("existing@example.com");
+        Object[] subscriptionData = {"newuser@example.com", subscribers};
+        // US-09: Filter data
+        List<String> categories = Arrays.asList("press", "holiday", "job");
+        Object[] filterData = {"press", categories};
+        // US-10: Contact data
+        Object[] contactData = {"Ishmael Koroma", "ishmael@example.com", "General Inquiry", "I need help with my application"};
 
+        // Apply each rule with appropriate test data
+        // Note: In a real implementation, you'd map these more elegantly.
+        // For demo purposes, we're using a simple index-based approach.
+
+        // Since each rule expects different data, we'll check each one individually
+        System.out.println("Running acceptance checks with real data...\n");
+
+        // US-01
+        AcceptanceRule rule1 = rules.get(0);
+        boolean result1 = rule1.check(submissionData);
+        System.out.println(rule1);
+        System.out.println();
+        if (result1) passed++;
+
+        // US-02
+        AcceptanceRule rule2 = rules.get(1);
+        boolean result2 = rule2.check(photoData);
+        System.out.println(rule2);
+        System.out.println();
+        if (result2) passed++;
+
+        // US-03
+        AcceptanceRule rule3 = rules.get(2);
+        boolean result3 = rule3.check(trackingData);
+        System.out.println(rule3);
+        System.out.println();
+        if (result3) passed++;
+
+        // US-04
+        AcceptanceRule rule4 = rules.get(3);
+        boolean result4 = rule4.check(dateData);
+        System.out.println(rule4);
+        System.out.println();
+        if (result4) passed++;
+
+        // US-05
+        AcceptanceRule rule5 = rules.get(4);
+        boolean result5 = rule5.check(dateData);
+        System.out.println(rule5);
+        System.out.println();
+        if (result5) passed++;
+
+        // US-06
+        AcceptanceRule rule6 = rules.get(5);
+        boolean result6 = rule6.check(previewData);
+        System.out.println(rule6);
+        System.out.println();
+        if (result6) passed++;
+
+        // US-07
+        AcceptanceRule rule7 = rules.get(6);
+        boolean result7 = rule7.check(ageData);
+        System.out.println(rule7);
+        System.out.println();
+        if (result7) passed++;
+
+        // US-08
+        AcceptanceRule rule8 = rules.get(7);
+        boolean result8 = rule8.check(subscriptionData);
+        System.out.println(rule8);
+        System.out.println();
+        if (result8) passed++;
+
+        // US-09
+        AcceptanceRule rule9 = rules.get(8);
+        boolean result9 = rule9.check(filterData);
+        System.out.println(rule9);
+        System.out.println();
+        if (result9) passed++;
+
+        // US-10
+        AcceptanceRule rule10 = rules.get(9);
+        boolean result10 = rule10.check(contactData);
+        System.out.println(rule10);
+        System.out.println();
+        if (result10) passed++;
+
+        // Also demonstrate a failing case
+        System.out.println("--- Testing a failing case ---");
+        AcceptanceRule failingRule = new AcceptanceRule(
+            "US-07: Age ≥ 18",
+            "I am applying for a Driver's License",
+            "I enter a date of birth showing I am 16 years old",
+            "The application is rejected"
+        );
+        Object[] failingAgeData = {"2009-01-01", 18};
+        boolean failingResult = failingRule.check(failingAgeData);
+        System.out.println(failingRule);
+        System.out.println();
+
+        // Final summary
         System.out.println("╔══════════════════════════════════════════════════════════╗");
         System.out.println("║                  ACCEPTANCE SUMMARY                     ║");
         System.out.println("╠══════════════════════════════════════════════════════════╣");
@@ -269,6 +330,7 @@ public class Demo {
         System.out.println("╔══════════════════════════════════════════════════════════╗");
         System.out.println("║                    DEMO COMPLETE                         ║");
         System.out.println("║           Salone Ducks - Document Application System    ║");
+        System.out.println("║              10 User Stories | 6 Must, 2 Should, 2 Could ║");
         System.out.println("╚══════════════════════════════════════════════════════════╝");
     }
 }
